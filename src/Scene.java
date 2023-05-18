@@ -1,16 +1,18 @@
 import CustomSwing.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Arrays;
 
 public class Scene extends CustomPanel implements ActionListener {
-    CustomInputField username = new CustomInputField(400, 50, 30, "Username", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88), new Color(0, 0, 0));
-    CustomInputField password = new CustomInputField(400, 50, 30, "Password", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88), new Color(0, 0, 0));
+    CustomInputField username = new CustomInputField(400, 50, 30, "Username", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
+    CustomInputField password = new CustomInputField(400, 50, 30, "Password", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
     CustomButton login = new CustomButton("Login", 195, 50, 30, new Color(73, 156, 143), new Color(171, 193, 133), new Color(0, 0, 0), true);
     CustomButton signUp = new CustomButton("SignUp", 195, 50, 30, new Color(171, 193, 133), new Color(73, 156, 143), new Color(0, 0, 0), false);
 
@@ -54,16 +56,22 @@ public class Scene extends CustomPanel implements ActionListener {
 
         add(new CustomPlaceholder(25, 40));
         for (int i = 0; i < 4; i++) {
-            socials[i] = new CustomButton(socialPaths[i], 40, 40, 20, new Color(62, 155, 142), new Color(46, 78, 88), true);
+            try {
+                socials[i] = new CustomButton(ImageIO.read(new File(socialPaths[i])), 40, 40, 20, new Color(62, 155, 142), new Color(46, 78, 88), true);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             socials[i].addActionListener(this);
             add(socials[i]);
             if (i < 3) {add(new CustomPlaceholder(60, 40));}
         }
         add(new CustomPlaceholder(25, 50));
 
-        jPane.setPreferredSize(new Dimension(195, 400));
+        add(new CustomPlaceholder(450, 20));
 
-        customPane.setPreferredSize(new Dimension(195, 400));
+        jPane.setPreferredSize(new Dimension(195, 500));
+
+        customPane.setPreferredSize(new Dimension(195, 500));
 
         add(jPane);
         add(new CustomPlaceholder(10, 400));

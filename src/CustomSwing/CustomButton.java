@@ -12,8 +12,8 @@ import java.io.IOException;
 
 public class CustomButton extends JButton {
     private Shape shape;
-    private int width = 100;
-    private int height = 30;
+    private final int width;
+    private final int height;
     private Color color1;
     private Color color2;
     private int radius;

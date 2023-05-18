@@ -107,15 +107,12 @@ public class CustomPanel extends JPanel {
      *                      <li>top left to bottom right
      *                      <li>bottom left to top right
      *                  </ol>
-     * @param imagePath The path to the image to place in the foreground
+     * @param image The image to place in the foreground
      */
-    public CustomPanel(Color color1, Color color2, int direction, String imagePath) throws IOException {
+    public CustomPanel(Color color1, Color color2, int direction, BufferedImage image) throws IOException {
         this(color1, color2, direction);
-        if (imagePath != null) {
-            File file = new File(imagePath);
-            if (file.exists()) {
-                image = ImageIO.read(file);
-            }
+        if (image != null) {
+            this.image = image;
         }
     }
 

@@ -21,7 +21,7 @@ public class CustomInputField extends JTextField implements FocusListener {
     private int width;
     private int radius;
     private String hintText;
-    private Color hintTextColor, color1, color2, lineColor, textColor;
+    private Color hintTextColor, gradientColor1, gradientColor2, lineColor, textColor;
     private float lineOpacity;
     private final Timer lineFadeInTimer, lineFadeOutTimer;
     private Image iconImage;
@@ -36,11 +36,11 @@ public class CustomInputField extends JTextField implements FocusListener {
     public Color getHintTextColor() {
         return this.hintTextColor;
     }
-    public Color getColor1() {
-        return this.color1;
+    public Color getGradientColor1() {
+        return this.gradientColor1;
     }
-    public Color getColor2() {
-        return this.color2;
+    public Color getGradientColor2() {
+        return this.gradientColor2;
     }
     public Color getLineColor() {
         return this.lineColor;
@@ -62,9 +62,9 @@ public class CustomInputField extends JTextField implements FocusListener {
         this.hintTextColor = hintTextColor;
         repaint();
     }
-    public void setGradientColors(Color color1, Color color2) {
-        this.color1 = color1;
-        this.color2 = color2;
+    public void setGradientColors(Color gradientColor1, Color gradientColor2) {
+        this.gradientColor1 = gradientColor1;
+        this.gradientColor2 = gradientColor2;
         repaint();
     }
     public void setLineColor(Color lineColor) {
@@ -95,23 +95,22 @@ public class CustomInputField extends JTextField implements FocusListener {
      * @param radius The radius of the rounded border.
      * @param hintText The hint text to be displayed when the input field is empty.
      * @param hintTextColor The color of the hint text.
-     * @param color1 The first color of the gradient background.
-     * @param color2 The second color of the gradient background.
+     * @param gradientColor1 The first color of the gradient background.
+     * @param gradientColor2 The second color of the gradient background.
      * @param lineColor The color of the animated line.
-     * @param textColor The color of the input text.
      */
-    public CustomInputField(int width, int height, int radius, String hintText, Color color1, Color color2, Color hintTextColor, Color lineColor, Color textColor) {
+    public CustomInputField(int width, int height, int radius, String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor, Color lineColor) {
         super();
         this.width = width;
         this.height = height;
         this.radius = radius;
         this.hintText = hintText;
-        this.color1 = color1;
-        this.color2 = color2;
+        this.gradientColor1 = gradientColor1;
+        this.gradientColor2 = gradientColor2;
         this.lineColor = lineColor;
         this.hintTextColor = hintTextColor;
-        this.textColor = textColor;
-        setForeground(textColor);
+        this.textColor = new Color(0, 0, 0);
+        setForeground(this.textColor);
 
         setBorder(new EmptyBorder(0, 15, 0 ,15));
         setOpaque(false);
@@ -156,29 +155,44 @@ public class CustomInputField extends JTextField implements FocusListener {
             }
         });
     }
-    public CustomInputField(int width, int height, String hintText, Color color1, Color color2, Color hintTextColor, Color lineColor, Color textColor) {
-        this(width, height, 20, hintText, color1, color2, hintTextColor, lineColor, textColor);
+    public CustomInputField(int width, int height, String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor, Color lineColor) {
+        this(width, height, 20, hintText, gradientColor1, gradientColor2, hintTextColor, lineColor);
     }
-    public CustomInputField(String hintText, Color color1, Color color2, Color hintTextColor, Color lineColor, Color textColor) {
-        this(200, 40, 20, hintText, color1, color2, hintTextColor, lineColor, textColor);
+    public CustomInputField(int width, int height, String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor) {
+        this(width, height, 20, hintText, gradientColor1, gradientColor2, hintTextColor, new Color(52, 79, 88));
+    }
+    public CustomInputField(int width, int height, String hintText, Color gradientColor1, Color gradientColor2) {
+        this(width, height, 20, hintText, gradientColor1, gradientColor2, new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public CustomInputField(String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor, Color lineColor) {
+        this(200, 40, 20, hintText, gradientColor1, gradientColor2, hintTextColor, lineColor);
+    }
+    public CustomInputField(String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor) {
+        this(200, 40, 20, hintText, gradientColor1, gradientColor2, hintTextColor, new Color(52, 79, 88));
+    }
+    public CustomInputField(String hintText, Color gradientColor1, Color gradientColor2) {
+        this(200, 40, 20, hintText, gradientColor1, gradientColor2, new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public CustomInputField(Color gradientColor1, Color gradientColor2) {
+        this(200, 40, 20, "", gradientColor1, gradientColor2, new Color(127, 127, 127), new Color(52, 79, 88));
     }
     public CustomInputField(int width, int height, int radius, String hintText) {
-        this(width, height, radius, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88), new Color(0, 0, 0));
+        this(width, height, radius, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
     }
     public CustomInputField(int width, int height, String hintText) {
-        this(width, height, 20, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88), new Color(0, 0, 0));
+        this(width, height, 20, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
     }
     public CustomInputField(int width, int height, int radius) {
-        this(width, height, radius, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88), new Color(0, 0, 0));
+        this(width, height, radius, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
     }
     public CustomInputField(int width, int height) {
-        this(width, height, 20, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88), new Color(0, 0, 0));
+        this(width, height, 20, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
     }
     public CustomInputField(String hintText) {
-        this(200, 40, 20, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88), new Color(0, 0, 0));
+        this(200, 40, 20, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
     }
     public CustomInputField() {
-        this(200, 40, 20, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88), new Color(0, 0, 0));
+        this(200, 40, 20, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
     }
 
 
@@ -234,7 +248,7 @@ public class CustomInputField extends JTextField implements FocusListener {
             e.printStackTrace();
             return;
         }
-        iconImage = icon.getImage();
+        this.iconImage = icon.getImage();
 
         setBorder(new EmptyBorder(0, height + 5, 0, 15));
 
@@ -246,11 +260,11 @@ public class CustomInputField extends JTextField implements FocusListener {
         Graphics2D g2 = (Graphics2D) g.create();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        g2.setPaint(new GradientPaint(0, 0, color1, getWidth(), 0, color2));
+        g2.setPaint(new GradientPaint(0, 0, this.gradientColor1, getWidth(), 0, this.gradientColor2));
         g2.fillRoundRect(0, 0, width - 1, height - 1, radius, radius);
 
         g2.setColor(lineColor);
-        int textX = 15 + ((iconImage != null) ? height-10 : 0);
+        int textX = 15 + ((this.iconImage != null) ? height-10 : 0);
         int textY = (height - g.getFontMetrics().getHeight()) / 2 + g.getFontMetrics().getAscent();
 
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, lineOpacity));
@@ -258,8 +272,8 @@ public class CustomInputField extends JTextField implements FocusListener {
 
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
 
-        if (iconImage != null) {
-            g2.drawImage(iconImage, 5, 5, height-10, height-10, null);
+        if (this.iconImage != null) {
+            g2.drawImage(this.iconImage, 5, 5, this.height-10, this.height-10, null);
         }
 
         g2.setFont(getFont());

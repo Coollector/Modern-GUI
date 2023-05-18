@@ -1,20 +1,24 @@
+import CustomSwing.CustomInputField;
+
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 
-public class Test {
+public class Test extends JFrame {
+    public Test() {
+        setTitle("Custom Input Field Example");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(400, 200);
+
+        JPanel contentPane = new JPanel(new BorderLayout());
+        setContentPane(contentPane);
+
+        CustomInputField inputField = new CustomInputField(200, 40, "Enter text");
+        contentPane.add(inputField, BorderLayout.CENTER);
+
+        setVisible(true);
+    }
+
     public static void main(String[] args) {
-        JFrame frame = new JFrame("My App");
-        Image defaultIcon = Toolkit.getDefaultToolkit().getImage("");
-        String defaultIconPath = "";
-        if (defaultIcon != null) {
-            File defaultIconFile = new File(defaultIcon.getSource().toString());
-            defaultIconPath = defaultIconFile.getAbsolutePath();
-        }
-        defaultIconPath = defaultIconPath.replaceAll("/", "\\\\");
-        System.out.println("Default Icon Path: " + defaultIconPath);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 400);
-        frame.setVisible(true);
+        new Test();
     }
 }
