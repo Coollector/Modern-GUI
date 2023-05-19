@@ -97,24 +97,29 @@ public class CustomTextPane extends JTextPane {
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
+
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
+
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
+
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
                 animateTextPane(true);
+                onHover();
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 animateTextPane(false);
+                onReleaseHover();
             }
         });
     }
@@ -251,5 +256,11 @@ public class CustomTextPane extends JTextPane {
 
     private void animateTextPane(boolean animate) {
         setForeground(new Color(getForeground().getRed(), getForeground().getGreen(), getForeground().getBlue(), animate ? 0.6f : 1.0f));
+    }
+    public void onHover() {
+        setBounds(getX() - 1, getY() - 1, getWidth() + 2, getHeight() + 2);
+    }
+    public void onReleaseHover() {
+        setBounds(getX() + 1, getY() + 1, getWidth() - 2, getHeight() - 2);
     }
 }
