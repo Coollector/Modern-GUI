@@ -2,7 +2,11 @@ package CustomSwing;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -83,7 +87,38 @@ public class CustomTextPane extends JTextPane {
         setOpaque(false);
         setBorder(new EmptyBorder(5, 5, 5, 5));
         setForeground(Color.BLACK);
+        addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                highlightHoveredText(e.getPoint());
+            }
+        });
+
+        addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                animateTextPane(true);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                animateTextPane(false);
+            }
+        });
     }
+
     /**
      * Creates a JPanel with a gradient background and an Image as Foreground
      * Background is needed if the image has transparent parts.
@@ -191,5 +226,30 @@ public class CustomTextPane extends JTextPane {
         g2d.dispose();
 
         super.paintComponent(g);
+    }
+
+
+
+    private void highlightHoveredText(Point point) {
+        StyledDocument doc = this.getStyledDocument();
+
+        // Clear any existing highlighting
+        StyleContext styleContext = StyleContext.getDefaultStyleContext();
+        AttributeSet normalAttr = styleContext.getEmptySet();
+        doc.setCharacterAttributes(0, doc.getLength(), normalAttr, true);
+
+        // Find the position of the hovered text
+        int pos = this.viewToModel2D(point);
+        Element root = doc.getDefaultRootElement();
+        int line = root.getElementIndex(pos);
+
+        // Apply highlighting to the hovered line
+        Element elem = root.getElement(line);
+        AttributeSet hoverAttr = styleContext.addAttribute(normalAttr, StyleConstants.Foreground, new Color(getForeground().getRed(), getForeground().getGreen(), getForeground().getBlue(), 1.0f));
+        doc.setCharacterAttributes(elem.getStartOffset(), elem.getEndOffset() - elem.getStartOffset(), hoverAttr, false);
+    }
+
+    private void animateTextPane(boolean animate) {
+        setForeground(new Color(getForeground().getRed(), getForeground().getGreen(), getForeground().getBlue(), animate ? 0.6f : 1.0f));
     }
 }
