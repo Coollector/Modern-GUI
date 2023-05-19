@@ -109,7 +109,7 @@ public class CustomPanel extends JPanel {
      *                  </ol>
      * @param image The image to place in the foreground
      */
-    public CustomPanel(Color color1, Color color2, int direction, BufferedImage image) throws IOException {
+    public CustomPanel(Color color1, Color color2, int direction, BufferedImage image) {
         this(color1, color2, direction);
         if (image != null) {
             this.image = image;
@@ -118,7 +118,6 @@ public class CustomPanel extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-        setOpaque(false);
         super.paintComponent(g);
 
         Graphics2D g2d = (Graphics2D) g;
@@ -144,7 +143,7 @@ public class CustomPanel extends JPanel {
         if (image != null) {
             g2d.drawImage(image, 0, 0, getWidth(), getHeight(), null);
         }
-        g2d.fillRoundRect(0, 0, width, height, radius, radius);
+        g2d.fillRoundRect(0, 0, getWidth(), getHeight(), radius, radius);
     }
 
     /**
@@ -161,7 +160,7 @@ public class CustomPanel extends JPanel {
      *     </ol>
      */
     public void setDirection(int direction) {
-        if (direction < 0 || direction > 6) {
+        if (direction < 1 || direction > 6) {
             throw new IllegalArgumentException("Direction must be between 1 and 6");
         }
         this.direction = direction;

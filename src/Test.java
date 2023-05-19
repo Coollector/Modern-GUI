@@ -7,14 +7,18 @@ public class Test extends JFrame {
     public Test() {
         setTitle("Custom Input Field Example");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 200);
+        setPreferredSize(new Dimension(450, 200));
+        setResizable(false);
 
-        JPanel contentPane = new JPanel(new BorderLayout());
-        setContentPane(contentPane);
+        JPanel contentPane = new JPanel();
 
-        CustomInputField inputField = new CustomInputField(200, 40, "Enter text");
-        contentPane.add(inputField, BorderLayout.CENTER);
+        CustomInputField username = new CustomInputField(400, 50);
+        contentPane.add(username);
 
+        add(contentPane);
+
+        pack();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 

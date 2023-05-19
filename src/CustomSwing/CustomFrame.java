@@ -7,18 +7,17 @@ import java.awt.event.MouseEvent;
 import java.awt.geom.RoundRectangle2D;
 
 public class CustomFrame extends JFrame {
-    public boolean lightMode = false;
     private static final String defaultIcon = "src/CustomSwing/pics/DefaultImageIcon.png";
     private static CustomTitleBar titleBar;
     private static final JPanel titlePanel = new JPanel(new BorderLayout());
 
     public CustomFrame() {
         super.setUndecorated(true);
-        super.setLayout(new BorderLayout());
+        setLayout(new BorderLayout());
         super.setBackground(Color.DARK_GRAY);
         setBackground(Color.DARK_GRAY);
 
-        titleBar = new CustomTitleBar(getTitle(), (getIconImage() != null) ? getIconImage() : new ImageIcon(defaultIcon).getImage(), getWidth(), this.lightMode, this);
+        titleBar = new CustomTitleBar(getTitle(), (getIconImage() != null) ? getIconImage() : new ImageIcon(defaultIcon).getImage(), getWidth(), this);
         titlePanel.add(titleBar, BorderLayout.NORTH);
         super.add(titlePanel);
 
@@ -32,15 +31,15 @@ public class CustomFrame extends JFrame {
     }
 
     @Override
-    public void setBackground(Color color) {
-        titlePanel.setBackground(color);
+    public void setBackground(Color bgColor) {
+        titlePanel.setBackground(bgColor);
+        super.setBackground(bgColor);
         repaint();
     }
 
     public void setLightMode(boolean lightMode) {
-        this.lightMode = lightMode;
         titleBar.setLightMode(lightMode);
-        setBackground(Color.WHITE);
+        setBackground((lightMode)? Color.WHITE : Color.DARK_GRAY);
     }
 
     @Override
@@ -60,11 +59,12 @@ public class CustomFrame extends JFrame {
 
     public static class CustomTitleBar extends JPanel {
 
+        public boolean lightMode = false;
         private int mouseX, mouseY;
         private final JLabel titleLabel = new JLabel();
 
-        public CustomTitleBar(String title, Image icon, int width, boolean lightMode, JFrame frame) {
-            setOpaque(true);
+        public CustomTitleBar(String title, Image icon, int width, JFrame frame) {
+            super.setOpaque(false);
             setLayout(new BorderLayout());
 
             setPreferredSize(new Dimension(width, 30));
@@ -141,9 +141,10 @@ public class CustomFrame extends JFrame {
         }
 
         public void setLightMode(boolean lightMode) {
-            setBackground((lightMode) ? Color.WHITE : Color.DARK_GRAY);
-            titleLabel.setBackground((lightMode) ? Color.WHITE : Color.DARK_GRAY);
-            titleLabel.setForeground((lightMode) ? Color.BLACK : Color.WHITE);
+            this.lightMode = lightMode;
+            setBackground((this.lightMode) ? Color.WHITE : Color.DARK_GRAY);
+            titleLabel.setBackground((this.lightMode) ? Color.WHITE : Color.DARK_GRAY);
+            titleLabel.setForeground((this.lightMode) ? Color.BLACK : Color.WHITE);
         }
 
         public void setTitle(String title) {
