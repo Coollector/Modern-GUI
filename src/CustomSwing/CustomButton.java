@@ -19,6 +19,7 @@ public class CustomButton extends JButton {
     private int radius;
     private boolean isTopLeftToBottomRight;
     private BufferedImage image;
+    private float opacity = 1.0f;
 
     public boolean isTopLeftToBottomRight() {
         return this.isTopLeftToBottomRight;
@@ -182,6 +183,7 @@ public class CustomButton extends JButton {
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g.create();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, this.opacity));
         RoundRectangle2D shape = new RoundRectangle2D.Float(0, 0, getWidth() - 1, getHeight() - 1, radius, radius);
         g2.clip(shape);
 
@@ -193,6 +195,9 @@ public class CustomButton extends JButton {
         }
         g2.setPaint(gradientPaint);
         g2.fillRect(0, 0, getWidth(), getHeight());
+
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
+
         if (image != null) {
             g2.drawImage(image, 0, 0, getWidth(), getHeight(), null);
         } else {
@@ -226,4 +231,12 @@ public class CustomButton extends JButton {
         }
     }
 
+    public void setOpacity(float opacity) {
+        this.opacity = opacity;
+        repaint();
+    }
+
+    public float getOpacity() {
+        return opacity;
+    }
 }

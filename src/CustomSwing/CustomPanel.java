@@ -29,6 +29,7 @@ public class CustomPanel extends JPanel {
     private int direction;
     private BufferedImage image;
     private int radius = 20;
+    private float opacity = 1.0f;
 
 
     /**
@@ -140,10 +141,13 @@ public class CustomPanel extends JPanel {
 
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         g2d.setPaint(gradient);
+
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, this.opacity));
+        g2d.fillRoundRect(0, 0, getWidth(), getHeight(), radius, radius);
+
         if (image != null) {
             g2d.drawImage(image, 0, 0, getWidth(), getHeight(), null);
         }
-        g2d.fillRoundRect(0, 0, getWidth(), getHeight(), radius, radius);
     }
 
     /**
@@ -201,5 +205,14 @@ public class CustomPanel extends JPanel {
         } else {
             throw new IOException("Image is not existing");
         }
+    }
+
+    public void setOpacity(float opacity) {
+        this.opacity = opacity;
+        repaint();
+    }
+
+    public float getOpacity() {
+        return opacity;
     }
 }
