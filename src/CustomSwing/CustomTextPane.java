@@ -22,7 +22,7 @@ import java.io.IOException;
  * @see #paintComponent
  */
 
-public class CustomTextPane extends JEditorPane {
+public class CustomTextPane extends JTextPane {
     private Color color1;
     private Color color2;
     private int direction;
