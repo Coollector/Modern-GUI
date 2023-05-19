@@ -179,15 +179,15 @@ public class CustomInputField extends JTextField implements FocusListener {
 
 
     private void onHover() {
-        setPreferredSize(new Dimension(this.width + 2, this.height + 2));
+        super.setPreferredSize(new Dimension(this.width + 2, this.height + 2));
         if (iconImage != null) {
             resizeImage();
         }
-        setBounds(getX()-1, getY()-1, this.width, this.height);
+        setBounds(getX()-1, getY()-1, this.width+2, this.height+2);
         repaint();
     }
     private void onReleaseHover() {
-        setPreferredSize(new Dimension(this.width, this.height));
+        super.setPreferredSize(new Dimension(this.width, this.height));
         setBounds(getX()+1, getY()+1, this.width, this.height);
         if (iconImage != null) {
             resizeImage();
