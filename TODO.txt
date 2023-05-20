@@ -1,0 +1,9 @@
+Add possibility to @FelixFrame for constructing with parameters like String as title or IconImage as Icon
+
+Add setOpacity() to FelixInputField
+
+Create:
+    Password Field Class (like FelixInputField just with hidden text and secure handling aswell as display real text field);
+    Checkbox Field Class
+    Slider Field Class
+    Good FileChooser Class
