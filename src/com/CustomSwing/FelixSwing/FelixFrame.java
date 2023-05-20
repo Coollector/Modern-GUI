@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.geom.RoundRectangle2D;
 
 public class FelixFrame extends JFrame {
-    private static final String defaultIcon = "src/com.CustomSwing.CustomSwing/pics/DefaultImageIcon.png";
+    private static final String defaultIcon = "src/com/CustomSwing/FelixSwing/pics/DefaultImageIcon.png";
     private static CustomTitleBar titleBar;
     private static final JPanel titlePanel = new JPanel(new BorderLayout());
 
@@ -83,7 +83,7 @@ public class FelixFrame extends JFrame {
             closeButton.setContentAreaFilled(false);
             closeButton.setFocusPainted(false);
             closeButton.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
-            closeButton.setIcon(new ImageIcon("src/com.CustomSwing.CustomSwing/pics/close.png"));
+            closeButton.setIcon(new ImageIcon("src/com/CustomSwing/FelixSwing/pics/close.png"));
             closeButton.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {
@@ -96,7 +96,7 @@ public class FelixFrame extends JFrame {
             minimizeButton.setContentAreaFilled(false);
             minimizeButton.setFocusPainted(false);
             minimizeButton.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
-            minimizeButton.setIcon(new ImageIcon("src/com.CustomSwing.CustomSwing/pics/minimize.png"));
+            minimizeButton.setIcon(new ImageIcon("src/com/CustomSwing/FelixSwing/pics/minimize.png"));
             minimizeButton.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {

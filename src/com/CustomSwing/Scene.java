@@ -3,7 +3,6 @@ package com.CustomSwing;
 import com.CustomSwing.FelixSwing.*;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,8 +18,8 @@ public class Scene extends FelixPanel implements ActionListener {
     FelixButton signUp = new FelixButton("SignUp", 195, 50, 30, new Color(171, 193, 133), new Color(73, 156, 143), new Color(0, 0, 0), false);
 
 
-    JTextPane jPane = new JTextPane();
-    FelixTextPane customPane = new FelixTextPane();
+    FelixScrollPane scrollPane = new FelixScrollPane();
+    FelixTextPane textPane = new FelixTextPane();
 
 
     FelixButton[] socials = new FelixButton[4];
@@ -71,13 +70,13 @@ public class Scene extends FelixPanel implements ActionListener {
 
         add(new FelixPlaceholder(450, 20));
 
-        jPane.setPreferredSize(new Dimension(195, 500));
+        scrollPane.setPreferredSize(new Dimension(195, 500));
 
-        customPane.setPreferredSize(new Dimension(195, 500));
+        textPane.setPreferredSize(new Dimension(195, 500));
 
-        add(jPane);
+        add(scrollPane);
         add(new FelixPlaceholder(10, 400));
-        add(customPane);
+        add(textPane);
     }
 
     @Override
@@ -97,7 +96,7 @@ public class Scene extends FelixPanel implements ActionListener {
         } else if (e.getSource() == login) {
             System.out.println("Logging in with\nusername:\t" + username.getText() + "\npassword:\t" + password.getText());
             login.setText(username.getText());
-            jPane.setText(customPane.getText());
+            scrollPane.setText(textPane.getText());
         } else if (e.getSource() == signUp) {
             System.out.println("Sign Up with\nusername:\t" + username.getText() + "\npassword:\t" + password.getText());
         }

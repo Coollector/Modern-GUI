@@ -12,8 +12,9 @@ public class FelixScrollPane extends JScrollPane {
         setForeground(Color.black);
         setOpaque(false);
 
-        this.label = new JTextPane();
+        this.label = new FelixTextPane();
         this.label.setEditable(true);
+        this.label.setOpaque(false);
         add(this.label);
         setViewportView(this.label);
     }
