@@ -23,15 +23,15 @@ public class Scene extends FelixPanel implements ActionListener {
 
 
     FelixButton[] socials = new FelixButton[4];
-    String[] socialPaths = {"pics/icons8-discord-50.png", "pics/icons8-twitter-64.png", "pics/icons8-web-50.png", "pics/icons8-github-64.png"};
+    String[] socialPaths = {"pics/icon_discord.png", "pics/icon_twitter.png", "pics/icon_web.png", "pics/icon_github.png"};
     String[] socialWebs = {"https://discord.com/", "https://twitter.com/", "https://google.com/", "https://github.com/"};
     public Scene() {
         setPreferredSize(Fenster.windowSize);
         setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
         setDirection(2);
 
-        username.setIcon("pics/icons8-user-60.png");
-        password.setIcon("pics/pngtree-vector-lock-icon-png-image_318067-removebg-preview.png");
+        username.setIcon("pics/icon_user.png");
+        password.setIcon("pics/icon_lock.png");
 
         login.addActionListener(this);
         signUp.addActionListener(this);
