@@ -33,6 +33,8 @@ public class FelixTextPane extends JTextPane {
     private Image image;
     private int radius = 20;
     private float opacity = 1.0f;
+    private boolean animatedText = true;
+    private boolean animated = true;
 
     // getters
     public float getOpacity() {
@@ -45,8 +47,22 @@ public class FelixTextPane extends JTextPane {
     public Color getColor2() {
         return this.color2;
     }
+    public boolean isAnimatedText() {
+        return animatedText;
+    }
+    public boolean isAnimated() {
+        return animated;
+    }
 
     // setters
+    public void setAnimated(boolean animated) {
+        this.animated = animated;
+        repaint();
+    }
+    public void setAnimatedText(boolean animatedText) {
+        this.animatedText = animatedText;
+        repaint();
+    }
     public void setRadius(int radius) {
         this.radius = radius;
         repaint();
@@ -121,36 +137,36 @@ public class FelixTextPane extends JTextPane {
         addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseMoved(MouseEvent e) {
-                highlightHoveredText(e.getPoint());
+                if (animatedText) {
+                    highlightHoveredText(e.getPoint());
+                }
             }
         });
 
         addMouseListener(new MouseListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
+            public void mouseClicked(MouseEvent e) {}
             @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
+            public void mousePressed(MouseEvent e) {}
             @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
+            public void mouseReleased(MouseEvent e) {}
             @Override
             public void mouseEntered(MouseEvent e) {
-                animateTextPane(true);
-                onHover();
+                if (animatedText) {
+                    animateTextPane(true);
+                }
+                if (animated) {
+                    onHover();
+                }
             }
-
             @Override
             public void mouseExited(MouseEvent e) {
-                animateTextPane(false);
-                onReleaseHover();
+                if (animatedText) {
+                    animateTextPane(false);
+                }
+                if (animated) {
+                    onReleaseHover();
+                }
             }
         });
     }
