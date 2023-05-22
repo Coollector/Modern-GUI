@@ -13,14 +13,14 @@ public class FelixInputField extends JTextField implements FocusListener {
     private int radius;
     private String hintText;
     private Color hintTextColor, gradientColor1, gradientColor2, lineColor, textColor;
-    private float lineOpacity;
+    private float lineOpacity = 0.0f;
     private final Timer lineFadeInTimer, lineFadeOutTimer;
     private Image iconImage;
     private String imagePath;
-    private float opacity;
-    private boolean animate;
+    private float opacity = 1.0f;
+    private boolean animated = true;
+    private boolean lineAnimation = true;
 
-    // getters
     public int getRadius() {
         return this.radius;
     }
@@ -43,11 +43,13 @@ public class FelixInputField extends JTextField implements FocusListener {
         return this.textColor;
     }
     public float getOpacity() {
-        return opacity;
+        return this.opacity;
     }
-
     public boolean isAnimated() {
-        return animate;
+        return animated;
+    }
+    public boolean isLineAnimation() {
+        return lineAnimation;
     }
 
     // setters
@@ -80,11 +82,55 @@ public class FelixInputField extends JTextField implements FocusListener {
         this.opacity = opacity;
         repaint();
     }
-    public void setAnimated(boolean animate) {
-        this.animate = animate;
+    public void setAnimated(boolean animated) {
+        repaint();
+        this.animated = animated;
+    }
+    public void setLineAnimation(boolean lineAnimation) {
+        this.lineAnimation = lineAnimation;
         repaint();
     }
 
+
+    public FelixInputField() {
+        this(200, 40, 20, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public FelixInputField(String hintText) {
+        this(200, 40, 20, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public FelixInputField(int width, int height) {
+        this(width, height, 20, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public FelixInputField(int width, int height, int radius) {
+        this(width, height, radius, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public FelixInputField(int width, int height, String hintText) {
+        this(width, height, 20, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public FelixInputField(int width, int height, int radius, String hintText) {
+        this(width, height, radius, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public FelixInputField(Color gradientColor1, Color gradientColor2) {
+        this(200, 40, 20, "", gradientColor1, gradientColor2, new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public FelixInputField(String hintText, Color gradientColor1, Color gradientColor2) {
+        this(200, 40, 20, hintText, gradientColor1, gradientColor2, new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public FelixInputField(String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor) {
+        this(200, 40, 20, hintText, gradientColor1, gradientColor2, hintTextColor, new Color(52, 79, 88));
+    }
+    public FelixInputField(String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor, Color lineColor) {
+        this(200, 40, 20, hintText, gradientColor1, gradientColor2, hintTextColor, lineColor);
+    }
+    public FelixInputField(int width, int height, String hintText, Color gradientColor1, Color gradientColor2) {
+        this(width, height, 20, hintText, gradientColor1, gradientColor2, new Color(127, 127, 127), new Color(52, 79, 88));
+    }
+    public FelixInputField(int width, int height, String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor) {
+        this(width, height, 20, hintText, gradientColor1, gradientColor2, hintTextColor, new Color(52, 79, 88));
+    }
+    public FelixInputField(int width, int height, String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor, Color lineColor) {
+        this(width, height, 20, hintText, gradientColor1, gradientColor2, hintTextColor, lineColor);
+    }
     /**
      * A rounded input field with gradient background, animation and input hint.
      * @param height The height of the input field.
@@ -127,8 +173,6 @@ public class FelixInputField extends JTextField implements FocusListener {
                 onReleaseHover();
             }
         });
-
-    lineOpacity = 0;
         addFocusListener(this);
         lineFadeInTimer = new Timer(10, new ActionListener() {
             @Override
@@ -155,62 +199,27 @@ public class FelixInputField extends JTextField implements FocusListener {
 
         repaint();
     }
-    public FelixInputField(int width, int height, String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor, Color lineColor) {
-        this(width, height, 20, hintText, gradientColor1, gradientColor2, hintTextColor, lineColor);
-    }
-    public FelixInputField(int width, int height, String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor) {
-        this(width, height, 20, hintText, gradientColor1, gradientColor2, hintTextColor, new Color(52, 79, 88));
-    }
-    public FelixInputField(int width, int height, String hintText, Color gradientColor1, Color gradientColor2) {
-        this(width, height, 20, hintText, gradientColor1, gradientColor2, new Color(127, 127, 127), new Color(52, 79, 88));
-    }
-    public FelixInputField(String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor, Color lineColor) {
-        this(200, 40, 20, hintText, gradientColor1, gradientColor2, hintTextColor, lineColor);
-    }
-    public FelixInputField(String hintText, Color gradientColor1, Color gradientColor2, Color hintTextColor) {
-        this(200, 40, 20, hintText, gradientColor1, gradientColor2, hintTextColor, new Color(52, 79, 88));
-    }
-    public FelixInputField(String hintText, Color gradientColor1, Color gradientColor2) {
-        this(200, 40, 20, hintText, gradientColor1, gradientColor2, new Color(127, 127, 127), new Color(52, 79, 88));
-    }
-    public FelixInputField(Color gradientColor1, Color gradientColor2) {
-        this(200, 40, 20, "", gradientColor1, gradientColor2, new Color(127, 127, 127), new Color(52, 79, 88));
-    }
-    public FelixInputField(int width, int height, int radius, String hintText) {
-        this(width, height, radius, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
-    }
-    public FelixInputField(int width, int height, String hintText) {
-        this(width, height, 20, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
-    }
-    public FelixInputField(int width, int height, int radius) {
-        this(width, height, radius, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
-    }
-    public FelixInputField(int width, int height) {
-        this(width, height, 20, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
-    }
-    public FelixInputField(String hintText) {
-        this(200, 40, 20, hintText, new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
-    }
-    public FelixInputField() {
-        this(200, 40, 20, "", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
-    }
 
 
     private void onHover() {
-        super.setPreferredSize(new Dimension(this.width + 2, this.height + 2));
-        if (iconImage != null) {
-            resizeImage();
+        if (animated) {
+            super.setPreferredSize(new Dimension(this.width + 2, this.height + 2));
+            if (iconImage != null) {
+                resizeImage();
+            }
+            setBounds(getX() - 1, getY() - 1, this.width + 2, this.height + 2);
+            repaint();
         }
-        setBounds(getX()-1, getY()-1, this.width+2, this.height+2);
-        repaint();
     }
     private void onReleaseHover() {
-        super.setPreferredSize(new Dimension(this.width, this.height));
-        setBounds(getX()+1, getY()+1, this.width, this.height);
-        if (iconImage != null) {
-            resizeImage();
-        };
-        repaint();
+        if (animated) {
+            super.setPreferredSize(new Dimension(this.width, this.height));
+            setBounds(getX() + 1, getY() + 1, this.width, this.height);
+            if (iconImage != null) {
+                resizeImage();
+            }
+            repaint();
+        }
     }
 
     private void resizeImage() {
@@ -257,22 +266,22 @@ public class FelixInputField extends JTextField implements FocusListener {
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g.create();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, this.opacity));
 
         g2.setPaint(new GradientPaint(0, 0, this.gradientColor1, this.width, 0, this.gradientColor2));
-        g2.fillRoundRect(0, 0, this.width - 1, this.height - 1, radius, radius);
 
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, this.opacity));
+        g2.fillRoundRect(0, 0, this.width - 1, this.height - 1, this.radius, this.radius);
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
 
         g2.setColor(lineColor);
         int textX = 15 + ((this.iconImage != null) ? this.height - 10 : 0);
         int textY = (this.height - g.getFontMetrics().getHeight()) / 2 + g.getFontMetrics().getAscent();
 
-        if (animate) {
+        if (lineAnimation) {
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, lineOpacity));
             g2.drawLine(textX, this.height - 7, this.width - 15, this.height - 5);
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
         }
-        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
 
         if (this.iconImage != null) {
             g2.drawImage(this.iconImage, 5, 5, this.height - 10, this.height - 10, null);

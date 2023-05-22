@@ -31,9 +31,38 @@ public class FelixTextPane extends JTextPane {
     private Color color2;
     private int direction;
     private Image image;
-    private int radius;
-    private float opacity;
+    private int radius = 20;
+    private float opacity = 1.0f;
 
+    // getters
+    public float getOpacity() {
+        return this.opacity;
+    }
+    public int getRadius() {
+        return this.radius;
+    }
+    public Color getColor1() { return color1; }
+    public Color getColor2() {
+        return this.color2;
+    }
+
+    // setters
+    public void setRadius(int radius) {
+        this.radius = radius;
+        repaint();
+    }
+    public void setOpacity(float opacity) {
+        this.opacity = opacity;
+        repaint();
+    }
+    public void setColors(Color color1, Color color2) {
+        this.color1 = color1;
+        this.color2 = color2;
+        repaint();
+    }
+    public void setColor(Color color){
+        this.setColors(color, color);
+    }
 
     /**
      * Creates a JPanel with standard gradient background with the colors:
@@ -199,14 +228,6 @@ public class FelixTextPane extends JTextPane {
         }
     }
 
-    public void setRadius(int radius) {
-        this.radius = radius;
-    }
-
-    public void setOpacity(float opacity) {
-        this.opacity = opacity;
-    }
-
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g.create();
@@ -230,14 +251,15 @@ public class FelixTextPane extends JTextPane {
 
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         g2d.setPaint(gradient);
-        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, this.opacity));
+
         if (this.image != null) {
             g2d.drawImage(this.image, 0, 0, getWidth(), getHeight(), null);
         }
+
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, this.opacity));
         g2d.fillRoundRect(0, 0, width, height, this.radius, this.radius);
-
-
         g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
+
         g2d.setColor(getForeground());
         g2d.setFont(getFont());
 

@@ -18,7 +18,7 @@ public class Scene extends FelixPanel implements ActionListener {
     FelixButton signUp = new FelixButton("SignUp", 195, 50, 30, new Color(171, 193, 133), new Color(73, 156, 143), new Color(0, 0, 0), false);
 
 
-    FelixScrollPane scrollPane = new FelixScrollPane();
+    FelixScrollPane scrollPane;
     FelixTextPane textPane = new FelixTextPane();
 
 
@@ -70,9 +70,12 @@ public class Scene extends FelixPanel implements ActionListener {
 
         add(new FelixPlaceholder(450, 20));
 
+        scrollPane = new FelixScrollPane(new FelixTextPane());
+
         scrollPane.setPreferredSize(new Dimension(195, 500));
 
         textPane.setPreferredSize(new Dimension(195, 500));
+
 
         add(scrollPane);
         add(new FelixPlaceholder(10, 400));
@@ -96,7 +99,6 @@ public class Scene extends FelixPanel implements ActionListener {
         } else if (e.getSource() == login) {
             System.out.println("Logging in with\nusername:\t" + username.getText() + "\npassword:\t" + password.getText());
             login.setText(username.getText());
-            scrollPane.setText(textPane.getText());
         } else if (e.getSource() == signUp) {
             System.out.println("Sign Up with\nusername:\t" + username.getText() + "\npassword:\t" + password.getText());
         }
