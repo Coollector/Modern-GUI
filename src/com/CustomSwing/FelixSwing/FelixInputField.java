@@ -17,7 +17,10 @@ public class FelixInputField extends JTextField implements FocusListener {
     private final Timer lineFadeInTimer, lineFadeOutTimer;
     private Image iconImage;
     private String imagePath;
+    private float opacity;
+    private boolean animate;
 
+    // getters
     public int getRadius() {
         return this.radius;
     }
@@ -38,6 +41,13 @@ public class FelixInputField extends JTextField implements FocusListener {
     }
     public Color getTextColor() {
         return this.textColor;
+    }
+    public float getOpacity() {
+        return opacity;
+    }
+
+    public boolean isAnimated() {
+        return animate;
     }
 
     // setters
@@ -64,6 +74,14 @@ public class FelixInputField extends JTextField implements FocusListener {
     }
     public void setTextColor(Color textColor) {
         this.textColor = textColor;
+        repaint();
+    }
+    public void setOpacity(float opacity) {
+        this.opacity = opacity;
+        repaint();
+    }
+    public void setAnimated(boolean animate) {
+        this.animate = animate;
         repaint();
     }
 
@@ -239,17 +257,21 @@ public class FelixInputField extends JTextField implements FocusListener {
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g.create();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, this.opacity));
 
         g2.setPaint(new GradientPaint(0, 0, this.gradientColor1, this.width, 0, this.gradientColor2));
         g2.fillRoundRect(0, 0, this.width - 1, this.height - 1, radius, radius);
+
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
 
         g2.setColor(lineColor);
         int textX = 15 + ((this.iconImage != null) ? this.height - 10 : 0);
         int textY = (this.height - g.getFontMetrics().getHeight()) / 2 + g.getFontMetrics().getAscent();
 
-        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, lineOpacity));
-        g2.drawLine(textX, this.height - 7, this.width - 15, this.height - 5);
-
+        if (animate) {
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, lineOpacity));
+            g2.drawLine(textX, this.height - 7, this.width - 15, this.height - 5);
+        }
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
 
         if (this.iconImage != null) {

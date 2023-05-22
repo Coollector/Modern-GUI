@@ -31,6 +31,8 @@ public class FelixTextPane extends JTextPane {
     private Color color2;
     private int direction;
     private Image image;
+    private int radius;
+    private float opacity;
 
 
     /**
@@ -197,6 +199,14 @@ public class FelixTextPane extends JTextPane {
         }
     }
 
+    public void setRadius(int radius) {
+        this.radius = radius;
+    }
+
+    public void setOpacity(float opacity) {
+        this.opacity = opacity;
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g.create();
@@ -220,11 +230,14 @@ public class FelixTextPane extends JTextPane {
 
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         g2d.setPaint(gradient);
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, this.opacity));
         if (this.image != null) {
             g2d.drawImage(this.image, 0, 0, getWidth(), getHeight(), null);
         }
-        g2d.fillRoundRect(0, 0, width, height, 20, 20);
+        g2d.fillRoundRect(0, 0, width, height, this.radius, this.radius);
 
+
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
         g2d.setColor(getForeground());
         g2d.setFont(getFont());
 
