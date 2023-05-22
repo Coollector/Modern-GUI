@@ -50,6 +50,27 @@ public class FelixButton extends JButton {
 
 
     // Constructors --------------------------------
+    public FelixButton() {
+        this("", 100, 30, 20, new Color(73, 156, 143), new Color(171, 193, 133), new Color(0, 0, 0), true);
+    }
+    public FelixButton(int width, int height) {
+        this("", width, height, 20, new Color(73, 156, 143), new Color(171, 193, 133), new Color(0, 0, 0), true);
+    }
+    public FelixButton(int width, int height, int radius) {
+        this("", width, height, radius, new Color(73, 156, 143), new Color(171, 193, 133), new Color(0, 0, 0), true);
+    }
+    public FelixButton(int width, int height, Color foreground) {
+        this("", width, height, 20, new Color(73, 156, 143), new Color(171, 193, 133), foreground, true);
+    }
+    public FelixButton(int width, int height, int radius, Color foreground) {
+        this("", width, height, radius, new Color(73, 156, 143), new Color(171, 193, 133), foreground, true);
+    }
+    public FelixButton(int width, int height, int radius, Color backgroundGradient1, Color backgroundGradient2, boolean isTopLeftToBottomRight) {
+        this("", width, height, radius, backgroundGradient1, backgroundGradient2, new Color(0, 0, 0), isTopLeftToBottomRight);
+    }
+    public FelixButton(int width, int height, int radius, Color backgroundGradient1, Color backgroundGradient2, Color foregroundColor, boolean isTopLeftToBottomRight) {
+        this("", width, height, radius, backgroundGradient1, backgroundGradient2, foregroundColor, isTopLeftToBottomRight);
+    }
     public FelixButton(String text) {
         this(text, 100, 30, 20, new Color(73, 156, 143), new Color(171, 193, 133), new Color(0, 0, 0), true);
     }
