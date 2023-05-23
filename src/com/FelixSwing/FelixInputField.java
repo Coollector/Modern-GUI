@@ -75,6 +75,7 @@ public class FelixInputField extends JTextField implements FocusListener {
         repaint();
     }
     public void setTextColor(Color textColor) {
+        setForeground(textColor);
         this.textColor = textColor;
         repaint();
     }

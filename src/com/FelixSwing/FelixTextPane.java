@@ -309,9 +309,9 @@ public class FelixTextPane extends JTextPane {
         setForeground(new Color(getForeground().getRed(), getForeground().getGreen(), getForeground().getBlue(), animate ? 0.6f : 1.0f));
     }
     public void onHover() {
-        setBounds(getX() - 1, getY() - 1, getWidth() + 2, getHeight() + 2);
+        this.setBounds(getX() - 1, getY() - 1, getWidth() + 2, getHeight() + 2);
     }
     public void onReleaseHover() {
-        setBounds(getX() + 1, getY() + 1, getWidth() - 2, getHeight() - 2);
+        this.setBounds(getX() + 1, getY() + 1, getWidth() - 2, getHeight() - 2);
     }
 }

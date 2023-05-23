@@ -1,14 +1,11 @@
 package com.FelixSwing;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 public class FelixButton extends JButton {
     private Shape shape;
@@ -18,7 +15,7 @@ public class FelixButton extends JButton {
     private Color color2;
     private int radius;
     private boolean isTopLeftToBottomRight;
-    private BufferedImage image;
+    private Image image;
     private float opacity = 1.0f;
 
     public boolean isTopLeftToBottomRight() {
@@ -45,6 +42,11 @@ public class FelixButton extends JButton {
     public void setGradientColors(Color color1, Color color2) {
         this.color1 = color1;
         this.color2 = color2;
+        repaint();
+    }
+    public void setColor(Color color) {
+        this.color1 = color;
+        this.color2 = color;
         repaint();
     }
 
@@ -175,24 +177,12 @@ public class FelixButton extends JButton {
         setBounds(getX() - 1, getY() - 1, width + 2, height + 2);
     }
     public void onReleaseHover() {
-        setBounds(getX() + 1, getY() + 1, width - 2, height - 2);
-    }
-
-
-    // return BufferedImage from Image Path
-    public static BufferedImage loadImageFromFile(String filePath) {
-        BufferedImage image = null;
-        try {
-            image = ImageIO.read(new File(filePath));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return image;
+        setBounds(getX() + 1, getY() + 1, width, height);
     }
 
 
     // set new Image and then repaint to show the image
-    public void setImage(BufferedImage image) {
+    public void setImage(Image image) {
         this.image = image;
         repaint();
     }
@@ -217,11 +207,11 @@ public class FelixButton extends JButton {
         g2.setPaint(gradientPaint);
         g2.fillRect(0, 0, getWidth(), getHeight());
 
-        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
 
         if (image != null) {
             g2.drawImage(image, 0, 0, getWidth(), getHeight(), null);
         } else {
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));
             FontMetrics metrics = g.getFontMetrics(getFont());
             int x = getWidth()/2 - metrics.stringWidth(getText())/2;
             int y = ((getHeight() - metrics.getHeight()) / 2) + metrics.getAscent();
@@ -243,13 +233,6 @@ public class FelixButton extends JButton {
             shape = new RoundRectangle2D.Float(0, 0, getWidth() - 1, getHeight() - 1, 20, 20);
         }
         return shape.contains(x, y);
-    }
-    @Override
-    public void setBounds(int x, int y, int width, int height) {
-        super.setBounds(x, y, width, height);
-        if (shape == null || !shape.getBounds().equals(getBounds())) {
-            shape = new RoundRectangle2D.Float(0, 0, width - 1, height - 1, 20, 20);
-        }
     }
 
     public void setOpacity(float opacity) {
