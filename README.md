@@ -5,17 +5,18 @@ This project provides a modern GUI look for Java Swing applications. It includes
 ## Screenshots
 
 ### Modern GUI Application
-![Modern GUI Application](/path/to/modern_gui_app.png)
+
+![Modern GUI Application](/pics/modern_example_1.png)
 
 Description: This screenshot shows a Java Swing application window using the modern GUI. The components have a sleek and contemporary design.
 
 ### Standard Java Swing Application
-![Standard Java Swing Application](/path/to/standard_swing_app.png)
+![Standard Java Swing Application](/pics/old_example.png)
 
 Description: This screenshot shows a standard Java Swing application window without the modern GUI applied. The components have the default Swing look and feel.
 
 ### Another Example of the Modern GUI
-![Another Example](/path/to/another_example.png)
+![Another Example](/pics/modern_example_2.png)
 
 Description: This screenshot showcases another example of the modern GUI applied to a different application.
 
