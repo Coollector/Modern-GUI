@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c3037401-957b-4b11-bd0d-df439f736210" name="Changes" comment="Initialising&#10;I reordered everything into src, Examples, and pics for README.md into pics. &#10;Updated README.md to display images">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="AnnotationType" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="CustomTextPane_text_highlitghting" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1684744185" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="creating_FelixScrollPane" />
+                    <option name="lastUsedInstant" value="1684744089" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="4dc43b03-d648-474a-baca-a8adc994a8e5" />
+        <option name="url" value="https://github.com/Coollector/Modern-GUI" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2PrZd1mR3cwrNWdVU5dZiRY3jgd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/felix/Downloads/ModernGUI/src/CustomSwing/RoundedInputField.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\felix\Programmieren\Java\ModernGUI\Examples\src" />
+      <recent name="C:\Users\felix\Programmieren\Java\ModernGUI\Examples" />
+      <recent name="C:\Users\felix\Programmieren\Java\ModernGUI\src\CustomSwing\pics" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.CustomSwing" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Fenster" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Fenster" />
+      <module name="Examples" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3037401-957b-4b11-bd0d-df439f736210" name="Changes" comment="" />
+      <created>1684217244822</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684217244822</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1684443850239</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684443850239</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial commit">
+      <created>1684448547936</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684448547936</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial commit">
+      <created>1684448607890</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684448607890</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Commit, but CustomInputField.java doesnt work.">
+      <created>1684451480161</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684451480161</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Bug fix: Displaying CustomInputField.java finally worked again:&#10;&#10;Bug was:&#10;getHeight() and getWidth() methods return 0 before the element is being painted on a Frame.&#10;Solution:&#10;implemented custom variables and replaced method calls with getting arguments">
+      <created>1684495733257</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684495733257</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Bug fix: Displaying CustomInputField.java finally worked again:&#10;&#10;Bug was:&#10;getHeight() and getWidth() methods return 0 before the element is being painted on a Frame.&#10;Solution:&#10;implemented custom variables and replaced method calls with getting arguments">
+      <created>1684496059137</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684496059137</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add functionality: Added Opacity change option to CustomButton.java and CustomPanel.java&#10;&#10;before painting, sets opacity to current level&#10;standard opacity is 1.0f (float type)">
+      <created>1684497822777</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684497822777</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add functionality: Added Opacity change option to CustomButton.java and CustomPanel.java&#10;&#10;before painting, sets opacity to current level&#10;standard opacity is 1.0f (float type)">
+      <created>1684497836931</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684497836931</updated>
+    </task>
+    <task id="LOCAL-00009" summary="unnecessary changes:&#10;&#10;Changed CustomTextPane's parent from JEditorPane to JTextPane&#10;&#10;Binary files got changed too, i dont know why">
+      <created>1684501084945</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684501084945</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Initial Commit">
+      <created>1684501165541</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684501165541</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add functionality: Added Animation for highlighting text in CustomTextPane on mouse hovering&#10;&#10;by setting the whole textes alpha to 60% on mouse enter and the lines, which the cursor is on, back to 100%&#10;on mouse exit everything gets set back to 100%">
+      <created>1684502448790</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684502448790</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add functionality: Added Animation for hovering over CustomTextPane -&gt; it gets bigger on mouse enter and back to normal size on mouse exit&#10;&#10;exactly the same as CustomButtons implementation">
+      <created>1684502652398</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684502652398</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Refactoring:&#10;Renamed from Custom... to Felix...&#10;copied everything into a package com.CustomSwing.">
+      <created>1684616883876</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684616883876</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Refactoring:&#10;Renamed from Custom... to Felix...&#10;copied everything into a package com.CustomSwing.">
+      <created>1684617096807</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684617096807</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add files:&#10;README.md&#10;TODO.txt">
+      <created>1684618402730</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684618402730</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Initial Commit:&#10;&#10;Honestly, I have no Idea why there are so many files changed but since now, everything is correct I will just commit it once and try to explain what has happened:&#10;I refactored everything into a package, I tried creating the FelixScrollPane and I added the scrollPane instead of the default JTextPane to the Scene, so I can see the effects.&#10;&#10;I directly add the CustomTitleBar into the FelixFrame class, since its never else needed so that should workout.">
+      <created>1684619139728</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684619139728</updated>
+    </task>
+    <task id="LOCAL-00017" summary="unnecessary changes:&#10;&#10;Changed pictures names to more understandable and replaced the old paths to the images with the new ones">
+      <created>1684655547907</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684655547907</updated>
+    </task>
+    <task id="LOCAL-00018" summary="unnecessary changes:&#10;&#10;Refactored the TODO.txt file and added ideas">
+      <created>1684667531147</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684667531147</updated>
+    </task>
+    <task id="LOCAL-00019" summary="unnecessary changes:&#10;&#10;Added Test.java to .gitignore">
+      <created>1684686844323</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684686844323</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add functionality:&#10;Added Option to change radius and Opacity to FelixInputField and FelixTextPane">
+      <created>1684739017763</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684739017763</updated>
+    </task>
+    <task id="LOCAL-00021" summary="FIX&#10;&#10;There was a problem with git, i will just commit now, hope everything works and after next commit, everything should work again">
+      <created>1684742411749</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1684742411749</updated>
+    </task>
+    <task id="LOCAL-00022" summary="FIX&#10;&#10;There was a problem with git, I think i got everything to work again">
+      <created>1684743476918</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1684743476918</updated>
+    </task>
+    <task id="LOCAL-00023" summary="unnecessary changes:&#10;&#10;Added Test.java to .gitignore">
+      <created>1684744203175</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1684744203175</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Add functionality:&#10;Changed options for animating FelixTextPane">
+      <created>1684745153662</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1684745153662</updated>
+    </task>
+    <task id="LOCAL-00025" summary="unnecessary changes:&#10;Resorted FelixInputField constructors">
+      <created>1684745179631</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1684745179631</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Add functionality:&#10;Added Constructor options to FelixButton for creating without String">
+      <created>1684751087076</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1684751087076</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Removed FelixScrollPane for clean up, will push after this commit and then add FelixScrollPane again">
+      <created>1684831403838</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684831403838</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Initialising&#10;I reordered everything into src, Examples, and pics for README.md into pics. &#10;Updated README.md to display images">
+      <created>1684832875530</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1684832875530</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="0253bfba-377c-4b37-a436-e171ba12c1ad">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="5f2cd548-fae6-414d-8b92-401bbc023250">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="0253bfba-377c-4b37-a436-e171ba12c1ad" value="TOOL_WINDOW" />
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Commit, but CustomInputField.java doesnt work." />
+    <MESSAGE value="Bug fix: Displaying CustomInputField.java finally worked again:&#10;&#10;Bug was:&#10;getHeight() and getWidth() methods return 0 before the element is being painted on a Frame.&#10;Solution:&#10;implemented custom variables and replaced method calls with getting arguments" />
+    <MESSAGE value="Bug fix: Randomly reordering of Scene elements on Hover over CustomInputField.java&#10;&#10;Bug was:&#10;setPreferredSize() was called which, since overwritten in class, changes parameters&#10;Solution:&#10;call super.setPreferredSize() which directly sets size instead of additionally changing Parameters" />
+    <MESSAGE value="Add functionality: Added Opacity change option to CustomButton.java and CustomPanel.java&#10;&#10;before painting, sets opacity to current level&#10;standard opacity is 1.0f (float type)" />
+    <MESSAGE value="unnecessary changes:&#10;&#10;Changed CustomTextPane's parent from JEditorPane to JTextPane&#10;&#10;Binary files got changed too, i dont know why" />
+    <MESSAGE value="Initial Commit" />
+    <MESSAGE value="Add functionality: Added Animation for highlighting text in CustomTextPane on mouse hovering&#10;&#10;by setting the whole textes alpha to 60% on mouse enter and the lines, which the cursor is on, back to 100%&#10;on mouse exit everything gets set back to 100%" />
+    <MESSAGE value="Add functionality: Added Animation for hovering over CustomTextPane -&gt; it gets bigger on mouse enter and back to normal size on mouse exit&#10;&#10;exactly the same as CustomButtons implementation" />
+    <MESSAGE value="Refactoring:&#10;Renamed from Custom... to Felix...&#10;copied everything into a package com.CustomSwing." />
+    <MESSAGE value="Add files:&#10;README.md&#10;TODO.txt" />
+    <MESSAGE value="Initial Commit:&#10;&#10;Honestly, I have no Idea why there are so many files changed but since now, everything is correct I will just commit it once and try to explain what has happened:&#10;I refactored everything into a package, I tried creating the FelixScrollPane and I added the scrollPane instead of the default JTextPane to the Scene, so I can see the effects.&#10;&#10;I directly add the CustomTitleBar into the FelixFrame class, since its never else needed so that should workout." />
+    <MESSAGE value="unnecessary changes:&#10;&#10;Changed pictures names to more understandable and replaced the old paths to the images with the new ones" />
+    <MESSAGE value="unnecessary changes:&#10;&#10;Refactored the TODO.txt file and added ideas" />
+    <MESSAGE value="Add functionality:&#10;Added Option to change radius and Opacity to FelixInputField and FelixTextPane" />
+    <MESSAGE value="FIX&#10;&#10;There was a problem with git, i will just commit now, hope everything works and after next commit, everything should work again" />
+    <MESSAGE value="FIX" />
+    <MESSAGE value="FIX&#10;&#10;There was a problem with git, I think i got everything to work again" />
+    <MESSAGE value="unnecessary changes:&#10;&#10;Added Test.java to .gitignore" />
+    <MESSAGE value="Add functionality:&#10;Changed options for animating FelixTextPane" />
+    <MESSAGE value="unnecessary changes:&#10;Resorted FelixInputField constructors" />
+    <MESSAGE value="Add functionality:&#10;Added Constructor options to FelixButton for creating without String" />
+    <MESSAGE value="Removed FelixScrollPane for clean up, will push after this commit and then add FelixScrollPane again" />
+    <MESSAGE value="Initialising&#10;I reordered everything into src, Examples, and pics for README.md into pics. &#10;Updated README.md to display images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initialising&#10;I reordered everything into src, Examples, and pics for README.md into pics. &#10;Updated README.md to display images" />
+  </component>
+</project>
