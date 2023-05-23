@@ -16,9 +16,6 @@ public class Scene extends FelixPanel implements ActionListener {
     FelixInputField password = new FelixInputField(400, 50, 30, "Password", new Color(48, 99, 104), new Color(73, 156, 143), new Color(127, 127, 127), new Color(52, 79, 88));
     FelixButton login = new FelixButton("Login", 195, 50, 30, new Color(73, 156, 143), new Color(171, 193, 133), new Color(0, 0, 0), true);
     FelixButton signUp = new FelixButton("SignUp", 195, 50, 30, new Color(171, 193, 133), new Color(73, 156, 143), new Color(0, 0, 0), false);
-
-
-    FelixScrollPane scrollPane;
     FelixTextPane textPane = new FelixTextPane();
 
 
@@ -70,15 +67,8 @@ public class Scene extends FelixPanel implements ActionListener {
 
         add(new FelixPlaceholder(450, 20));
 
-        scrollPane = new FelixScrollPane(new FelixTextPane());
-
-        scrollPane.setPreferredSize(new Dimension(195, 500));
-
         textPane.setPreferredSize(new Dimension(195, 500));
 
-
-        add(scrollPane);
-        add(new FelixPlaceholder(10, 400));
         add(textPane);
     }
 
