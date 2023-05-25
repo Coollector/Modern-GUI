@@ -16,6 +16,8 @@ public class Scene extends FelixPanel implements ActionListener {
     FelixButton signUp = new FelixButton("SignUp", 195, 50, 30, new Color(171, 193, 133), new Color(73, 156, 143), new Color(0, 0, 0), false);
     FelixTextPane textPane = new FelixTextPane();
 
+    FelixButton testButton = new FelixButton("Test");
+
 
     FelixButton[] socials = new FelixButton[4];
     String[] socialPaths = {"Examples/src/pics/icon_discord.png", "Examples/src/pics/icon_twitter.png", "Examples/src/pics/icon_web.png", "Examples/src/pics/icon_github.png"};
@@ -63,10 +65,9 @@ public class Scene extends FelixPanel implements ActionListener {
         }
         add(new FelixPlaceholder(25, 50));
 
-        add(new FelixPlaceholder(450, 20));
+        add(new FelixPlaceholder(450, 50));
 
-        textPane.setPreferredSize(new Dimension(195, 500));
-
+        textPane.setPreferredSize(new Dimension(420, 400));
         add(textPane);
     }
 

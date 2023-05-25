@@ -1,10 +1,14 @@
 Add:
-    possibility to FelixFrame for constructing with parameters like String as title or IconImage as Icon
-    setOpacity() to FelixInputField
-    possibility to FelixButton for adding an icon to the left of the text, like in FelixInputField
+    @ADD: possibility to FelixButton for adding an icon to the left of the text, like in FelixInputField
 
 Create:
-    Password Field Class (like FelixInputField just with hidden text and secure handling as well as display real text field)
-    Checkbox Field Class
-    Slider Field Class
-    Good FileChooser Class
+    @CREATE: Password Field Class (like FelixInputField just with hidden text and secure handling as well as display real text button)
+    @CREATE: Checkbox Field Class
+    @CREATE: Slider Field Class
+    @CREATE: Good FileChooser Class
+    @CREATE: Scroll Pane Class
+
+Fix:
+    @FIX FelixTextPane animation
+    @FIX FelixFrame close and minimize Button get blurry because of resizing
+    @FIX All drawings should have fixed bounds (not changing for animation) and just the rounded rectangle gets different size, so it doesnt effect the sounrroundings

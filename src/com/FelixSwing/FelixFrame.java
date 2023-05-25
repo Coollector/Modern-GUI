@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.geom.RoundRectangle2D;
 
 public class FelixFrame extends JFrame {
-    private static final String defaultIcon = "src/com/FelixSwing/pics/DefaultImageIcon.png";
+    private static final String defaultIcon = "/pics/DefaultImageIcon.png";
     private static CustomTitleBar titleBar;
     private static final JPanel titlePanel = new JPanel(new BorderLayout());
     private static Color gradientColor1;
@@ -73,6 +73,7 @@ public class FelixFrame extends JFrame {
         super.setIconImage(icon);
         titleBar.setIconImage(icon);
     }
+    public void setIconImage(String iconPath) {this.setIconImage(new ImageIcon(iconPath).getImage());}
 
     @Override
     public void setUndecorated(boolean undecorated) {}
@@ -209,13 +210,9 @@ public class FelixFrame extends JFrame {
             titleLabel.setForeground((this.lightMode) ? Color.BLACK : Color.WHITE);
         }
 
-        public void setTitle(String title) {
-            titleLabel.setText(title);
-        }
+        public void setTitle(String title) {titleLabel.setText(title);}
 
-        public void setIconImage(Image icon) {
-            titleLabel.setIcon(resizeIcon(icon, new Dimension(25, 25)));
-        }
+        public void setIconImage(Image icon) {titleLabel.setIcon(resizeIcon(icon, new Dimension(25, 25)));}
 
         public static Image convertToImage(Icon icon) {
             if (icon instanceof ImageIcon) {

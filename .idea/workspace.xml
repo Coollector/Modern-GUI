@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3037401-957b-4b11-bd0d-df439f736210" name="Changes" comment="Changes (made because of recommendations of classmate (benni)):&#10;&#10;FelixFrame:&#10;    getLightMode implemented&#10;    setGradientColor implemented&#10;    Button animation for close and minimize&#10;    &#10;FelixButton:&#10;    setOpacity affects image in Button as well&#10;    setColor implemented for none Gradient color&#10;    setImage arg type from BufferedImage to java.awt.Image">
+    <list default="true" id="c3037401-957b-4b11-bd0d-df439f736210" name="Changes" comment="Changes (made to provide more convenience):&#10;&#10;FelixFrame:&#10;    setImageIcon now accepts String to image as input&#10;    &#10;FelixButton:&#10;    added setIcon which sets an icon, same way as in FelixInputField&#10;    fixed animation&#10;    &#10;FelixTextPane:&#10;    fixed animation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/FelixSwing/FelixInputField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FelixSwing/FelixInputField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Examples/src/Fenster.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examples/src/Fenster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Examples/src/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/Examples/src/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Examples/Fenster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Examples/Fenster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Examples/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Examples/Scene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ModernGUI/com/FelixSwing/FelixTextPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ModernGUI/com/FelixSwing/FelixTextPane.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/FelixSwing/FelixTextPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/FelixSwing/FelixTextPane.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +27,8 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -85,27 +91,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/felix/Downloads/ModernGUI/src/CustomSwing/RoundedInputField.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "All Places",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/felix/Downloads/ModernGUI/src/CustomSwing/RoundedInputField.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.toDoOptions"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -377,7 +384,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684841101046</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Changes (made because of recommendations of classmate (benni)):&#10;&#10;FelixFrame:&#10;    getLightMode implemented&#10;    setGradientColor implemented&#10;    Button animation for close and minimize&#10;    &#10;FelixButton:&#10;    setOpacity affects image in Button as well&#10;    setColor implemented for none Gradient color&#10;    setImage arg type from BufferedImage to java.awt.Image&#10;    &#10;FelixInputField&#10;    fixed setTextColor to work">
+      <created>1684843299272</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1684843299272</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Changes (made to provide more convenience):&#10;&#10;FelixFrame:&#10;    setImageIcon now accepts String to image as input&#10;    &#10;FelixButton:&#10;    added setIcon which sets an icon, same way as in FelixInputField&#10;    fixed animation&#10;    &#10;FelixTextPane:&#10;    fixed animation">
+      <created>1684993971744</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1684993971744</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Changes (made to provide more convenience):&#10;&#10;FelixFrame:&#10;    setImageIcon now accepts String to image as input&#10;    &#10;FelixButton:&#10;    added setIcon which sets an icon, same way as in FelixInputField&#10;    fixed animation&#10;    &#10;FelixTextPane:&#10;    fixed animation">
+      <created>1684998429258</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1684998429258</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -456,8 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit, but CustomInputField.java doesnt work." />
-    <MESSAGE value="Bug fix: Displaying CustomInputField.java finally worked again:&#10;&#10;Bug was:&#10;getHeight() and getWidth() methods return 0 before the element is being painted on a Frame.&#10;Solution:&#10;implemented custom variables and replaced method calls with getting arguments" />
     <MESSAGE value="Bug fix: Randomly reordering of Scene elements on Hover over CustomInputField.java&#10;&#10;Bug was:&#10;setPreferredSize() was called which, since overwritten in class, changes parameters&#10;Solution:&#10;call super.setPreferredSize() which directly sets size instead of additionally changing Parameters" />
     <MESSAGE value="Add functionality: Added Opacity change option to CustomButton.java and CustomPanel.java&#10;&#10;before painting, sets opacity to current level&#10;standard opacity is 1.0f (float type)" />
     <MESSAGE value="unnecessary changes:&#10;&#10;Changed CustomTextPane's parent from JEditorPane to JTextPane&#10;&#10;Binary files got changed too, i dont know why" />
@@ -481,6 +507,8 @@
     <MESSAGE value="Initialising&#10;I reordered everything into src, Examples, and pics for README.md into pics. &#10;Updated README.md to display images" />
     <MESSAGE value="Remove Later" />
     <MESSAGE value="Changes (made because of recommendations of classmate (benni)):&#10;&#10;FelixFrame:&#10;    getLightMode implemented&#10;    setGradientColor implemented&#10;    Button animation for close and minimize&#10;    &#10;FelixButton:&#10;    setOpacity affects image in Button as well&#10;    setColor implemented for none Gradient color&#10;    setImage arg type from BufferedImage to java.awt.Image" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes (made because of recommendations of classmate (benni)):&#10;&#10;FelixFrame:&#10;    getLightMode implemented&#10;    setGradientColor implemented&#10;    Button animation for close and minimize&#10;    &#10;FelixButton:&#10;    setOpacity affects image in Button as well&#10;    setColor implemented for none Gradient color&#10;    setImage arg type from BufferedImage to java.awt.Image" />
+    <MESSAGE value="Changes (made because of recommendations of classmate (benni)):&#10;&#10;FelixFrame:&#10;    getLightMode implemented&#10;    setGradientColor implemented&#10;    Button animation for close and minimize&#10;    &#10;FelixButton:&#10;    setOpacity affects image in Button as well&#10;    setColor implemented for none Gradient color&#10;    setImage arg type from BufferedImage to java.awt.Image&#10;    &#10;FelixInputField&#10;    fixed setTextColor to work" />
+    <MESSAGE value="Changes (made to provide more convenience):&#10;&#10;FelixFrame:&#10;    setImageIcon now accepts String to image as input&#10;    &#10;FelixButton:&#10;    added setIcon which sets an icon, same way as in FelixInputField&#10;    fixed animation&#10;    &#10;FelixTextPane:&#10;    fixed animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes (made to provide more convenience):&#10;&#10;FelixFrame:&#10;    setImageIcon now accepts String to image as input&#10;    &#10;FelixButton:&#10;    added setIcon which sets an icon, same way as in FelixInputField&#10;    fixed animation&#10;    &#10;FelixTextPane:&#10;    fixed animation" />
   </component>
 </project>

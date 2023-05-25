@@ -14,7 +14,7 @@ public class Fenster extends FelixFrame {
 
 
         setTitle("Modern GUI");
-        setIconImage(new ImageIcon("Examples/src/pics/icon.png").getImage());
+        // setIconImage(new ImageIcon("Examples/src/pics/icon.png").getImage());
 
         add(new Scene());
 

@@ -35,6 +35,8 @@ public class FelixTextPane extends JTextPane {
     private float opacity = 1.0f;
     private boolean animatedText = true;
     private boolean animated = true;
+    private int width;
+    private int height;
 
     // getters
     public float getOpacity() {
@@ -308,10 +310,35 @@ public class FelixTextPane extends JTextPane {
     private void animateTextPane(boolean animate) {
         setForeground(new Color(getForeground().getRed(), getForeground().getGreen(), getForeground().getBlue(), animate ? 0.6f : 1.0f));
     }
+
     public void onHover() {
-        this.setBounds(getX() - 1, getY() - 1, getWidth() + 2, getHeight() + 2);
+        setPreferredSize(new Dimension(this.width + 2, this.height + 2));
+        setBounds(getX() - 1, getY() - 1, this.width, this.height);
+        repaint();
     }
     public void onReleaseHover() {
-        this.setBounds(getX() + 1, getY() + 1, getWidth() - 2, getHeight() - 2);
+        setPreferredSize(new Dimension(this.width - 2, this.height - 2));
+        setBounds(getX() + 1, getY() + 1, this.width, this.height);
+        repaint();
+    }
+
+    // necessary functions
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(width, height);
+    }
+    @Override
+    public void setPreferredSize(Dimension dimension) {
+        super.setPreferredSize(dimension);
+        this.width = dimension.width;
+        this.height = dimension.height;
+        repaint();
+    }
+    @Override
+    public void setSize(int width, int height) {
+        super.setSize(width, height);
+        this.width = width;
+        this.height = height;
+        repaint();
     }
 }
